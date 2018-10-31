@@ -1,0 +1,41 @@
+({
+	populateTable  : function(component, event, helper) {
+		location.reload();
+	},
+    fetchPauseInterview : function(component, event, helper) {
+        var action = component.get('c.getpauseInterviews');
+        action.setStorable();
+        action.setCallback(this,function(response){
+            var state = response.getState();
+            if(state === "SUCCESS" && component.isValid())
+            {
+                var resp = response.getReturnValue();
+                console.log('Response Time: '+((new Date().getTime())-requestInitiatedTime));
+                component.set("v.interviewList",resp);
+            }
+        });
+        var requestInitiatedTime = new Date().getTime();
+        $A.enqueueAction(action); 
+    },
+    handleShowModal : function(component,id) {
+        $A.createComponent("lightning:flow", {"onstatuschange": component.get("c.statusChange")},
+                           function (content, status) {
+                               if (status === "SUCCESS") {
+                                   console.log('@@@ '+content);
+                                   component.find('overlayLib').showCustomModal({
+                                       body: content,
+                                       showCloseButton: true,
+                                       cssClass : "slds-modal_small demo-modal",
+                                       closeCallback: function () {
+                                           $A.get('e.force:refreshView').fire();
+                                           location.reload();
+                                       }
+                                   }).then(function(overlay) {
+                                       // Use to close the modal later
+                                       component.set("v.overlay", overlay);
+                                   });
+                                   content.resumeFlow(id);
+                               }
+                           });
+    }
+})

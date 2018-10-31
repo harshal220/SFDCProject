@@ -1,0 +1,61 @@
+.THIS .wrapper{display:flex !important; justify-content:center !important;}
+.THIS .boxItems {
+   /* height: 233px;*/
+    padding:11px;
+    border: 1px solid rgb(201, 199, 197);
+    margin-top: 11px;
+    /*width: 31.7%;*/
+    margin-right: 2px;
+    margin-left: 10px;
+}
+.THIS .slds-grid--align-center:first-child{margin-left:0 !important;}
+.THIS .headingItem {
+    /*color: #f37735;
+    font-size: 12px;
+    */
+    color: #127cd4;
+    font-size: 14px;
+    font-weight:bold;
+    /*width:22%;*/
+}
+.THIS .shrinkTab {
+    position: relative;
+    float: right;
+   /* margin-top:37px;*/
+    display: inline;
+}
+.THIS .pauseFlowMsg {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    text-align: center;
+}
+.THIS .pauseLabel {
+    float:left;
+    font-size:14px;
+   /* width: 56%;*/
+}
+
+.THIS .btn-container{text-align:right;}
+.THIS .wrapper{justify-content:center !important;}
+.THIS .infodiv{
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid green;
+    width: 100%;
+    text-align: center; 
+    margin: 10px 5px 0;}
+/*.THIS .slds-template__container{background-color: white !important;}*/
+.THIS .column-div{padding-bottom:22px;}
+.THIS .reason-div{min-height:50px;}
+.THIS .container{background-color:#fff !important; height:550px;}
+.THIS.body .bBody {
+    display: inline-block;
+    width: 50%;
+    float: left;
+}
+/*.THIS .slds-large-size_3-of-12,
+.THIS .slds-large-size--3-of-12{width:32%;}*/
+
+.THIS .slds-card_boundary{margin:0 11%;}
